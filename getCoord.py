@@ -5,7 +5,7 @@ def locate(x):
 
     location = geolocator.geocode(x)
     if location == None:
-        return
+        return None
     latitude = location.latitude
     longitude = location.longitude
     la = '{number:.{digits}f}'.format(number=latitude, digits=2)

@@ -1,4 +1,11 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel= "stylesheet" type= "text/css" href= "../static/styles/start.css">
+</head>
+<body>
 <center>
+	<h1> Green Switch </h1>
 	<h1> 
 		{{ location }}
 	</h1>
@@ -7,9 +14,34 @@
     	<input type="submit" value="Submit">
 	</form>
 	<h2>
-		{{ speed }}
-		{{ direction }}
-		{{ irradiance }}
-		{{ january }}
+		Average Wind Speed: {{ speed }} m/s
+	</h2>
+	<h2>
+		Average January Wind Speed: {{ january }} m/s
+	</h2>
+	<h2>
+		Average Wind Direction: {{ direction }} degrees clockwise
+	</h2>
+	<h2>
+		Average Solar Irradiance: {{ irradiance }} kw-hr/m^2/day
+	</h2>
+	<h2>
+		Wind Speed World Ranking: {{ speed_ranking }} % 
+	</h2>
+	<h2>
+		Solar Irradiance World Ranking: {{ solar_ranking }} % 
+	</h2>
+	<h2>
+		Minimum Wind Speed: {{ min_speed }} m/s
+	</h2>
+	<h2>
+		Maximum Wind Speed: {{ max_speed }} m/s
+	</h2>
+	<h2>
+		Minimum Solar Irradiance: {{ min_solar }} kw-hr/m^2/day
+	</h2>
+	<h2>
+		Maximum Solar Irradiance: {{ max_solar }} kw-hr/m^2/day
 	</h2>
 </center>
+</body>

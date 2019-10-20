@@ -59,7 +59,46 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+  @font-face {
+font-family: "Akzidenz Grotesk Bold";
+src: url("fonts/AkzidenzGrotesk-Bold.otf");
 }
+
+@font-face {
+font-family: "Akzidenz Grotesk Regular";
+src: url("fonts/AkzidenzGrotesk-Regular.otf");
+}
+
+@font-face {
+font-family: "Akzidenz Grotesk Medium";
+src: url("fonts/AkzidenzGrotesk-Medium.otf");
+}
+
 h1 {
-  background-color: #FFFFFF;
+    font-size: 40pt;
+    font-family: 'Akzidenz Grotesk Bold', Arial, sans-serif;
+    font-weight:normal;
+    font-style:normal;
 }
+
+h2 {
+    font-size: 20pt;
+    font-family: 'Akzidenz Grotesk Medium', Arial, sans-serif;
+    font-weight:normal;
+    font-style:normal;
+}
+
+body {
+    font-size: 16pt;
+    font-family: 'Akzidenz Grotesk Medium', Arial, sans-serif;
+    font-weight:normal;
+    font-style:normal;
+}
+
+p {
+    font-size: 16pt;
+    font-family: 'Akzidenz Grotesk Regular', Arial, sans-serif;
+    font-weight:normal;
+    font-style:normal;
+}
+

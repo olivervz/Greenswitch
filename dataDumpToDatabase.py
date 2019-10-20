@@ -15,11 +15,33 @@ def readJsonDump(fileName):
 
 def convertDumpToDatabase(JsonDump, measurement):
   database = {}
+  minimum = 1000000.00
+  minimumLocation = ""
+  maximum = 0.00
+  maximumLocation = ""
+
   for entry in JsonDump['features']:
+
+    if entry['properties']['parameter'][measurement]['13'] < minimum:
+      minimum = entry['properties']['parameter'][measurement]['13']
+      minimumLocation = str(entry['geometry']['coordinates'][0]) + "," + str(entry['geometry']['coordinates'][1])
+
+    if entry['properties']['parameter'][measurement]['13'] > maximum:
+      maximum = entry['properties']['parameter'][measurement]['13']
+      maximumLocation = str(entry['geometry']['coordinates'][0]) + "," + str(entry['geometry']['coordinates'][1])
+
     database[str(entry['geometry']['coordinates'][0]) + "," + str(entry['geometry']['coordinates'][1])] = \
       {'completeAverage': entry['properties']['parameter'][measurement]['13'],
         'months': removeYearlyAverage(entry['properties']['parameter'][measurement])
       }
+
+  database['minimum'] = {}
+  database['minimum']['value'] = minimum
+  database['minimum']['location'] = minimumLocation
+
+  database['maximum'] = {}
+  database['maximum']['value'] = maximum
+  database['maximum']['location'] = maximumLocation
   return database
 
 def writeDatabaseToJsonFile(database, fileName):
