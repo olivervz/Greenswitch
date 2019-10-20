@@ -9,7 +9,8 @@ def removeYearlyAverage(windSpeedAveragesDict):
   return monthlyWindSpeedAverage
 
 def readJsonDump(fileName):
-  with open(fileName + '.json') as json_file:
+  newfileName = 'data/'+fileName+'.json'
+  with open(newfileName) as json_file:
     return json.load(json_file)
 
 def convertDumpToDatabase(JsonDump, measurement):
@@ -22,7 +23,8 @@ def convertDumpToDatabase(JsonDump, measurement):
   return database
 
 def writeDatabaseToJsonFile(database, fileName):
-  with open(fileName + '.json', 'w', encoding='utf-8') as file:
+  newfileName = 'data/'+fileName+'.json'
+  with open(newfileName, 'w', encoding='utf-8') as file:
     json.dump(database, file, ensure_ascii=False, indent=4)
 
 

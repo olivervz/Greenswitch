@@ -1,10 +1,9 @@
 import json
 
 def readJsonDump(fileName):
-  with open(fileName + '.json') as json_file:
+  newfileName = 'data/'+fileName+'.json'
+  with open(newfileName) as json_file:
     return json.load(json_file)
-
-
 
 def convertToValidKey(lon, lat):
 
@@ -21,7 +20,7 @@ def convertToValidKey(lon, lat):
   else:
     roundedLat -= 0.25
 
-
+  print(str(roundedLon) + "," + str(roundedLat))
   return str(roundedLon) + "," + str(roundedLat)
 
 def getMonthlyAverage(database, key, month):
