@@ -1,3 +1,6 @@
 # So we don't have to push 1 Gb + of json data to github each time
 
 Data/
+solarIrradianceDatabase.json
+windDirectionDatabase.json
+windSpeedDatabase.json
