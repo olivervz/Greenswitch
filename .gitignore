@@ -1,0 +1,7 @@
+# So we don't have to push 1 Gb + of json data to github each time
+/solarIrradiance.json
+/solarIrradianceDatabase.json
+/windDirection.json
+/windDirectionDatabase.json
+/windSpeed.json
+/windSpeedDirection.json

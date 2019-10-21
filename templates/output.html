@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<style type="text/css">  
+     * {
+      box-sizing: border-box;
+    }
+
+    .leftcolumn {
+      float: left;
+      border: 1px solid black;
+      width: 49.8%;
+      padding: .1%;
+    }
+    .rightcolumn {
+      border: 1px solid black;
+      float: right;
+      width: 49.8%;
+      padding: .1%;
+    }
+
+    .address {
+        left: auto;
+        text-align: left;
+        padding-left: 1%;}
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      float:center;
+      display: table;
+      width: 98.5%;
+      padding-left: 5%;
+      padding-right:5%;
+      padding-bottom: 1%;
+    }
+
+    html, body, {
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    }
+
+    table, th, {
+        font-size: 35px;
+    }
+
+    table, th, td, tr, {
+    font-weight: bold;
+    font-family: "Times New Roman" ,Times,serif;
+    }
+
+     .tableText{
+        font-size: 30px;
+        font-family: "Times New Roman" , Times, serif;
+        border: 1px solid black; border-collapse: collapse;
+    }
+
+    .formatTable {
+        width:80%; text-align: center;background-color: #8CC63F;
+            border: 1px solid black; border-collapse: collapse;
+    }
+    
+</style> 
+
+<html>
+<center>
+<h1>
+    <img src="https://imgur.com/d0VtbOM.png">
+</h1>
+<h2 class="address"> 
+    {{ address }}
+    
+</h2>
+<h2 class="address"> 
+    Coordinates({{ location }})
+    
+</h2>
+
+
+
+<body>
+    {{ error }}
+</center>
+
+    
+    <center>
+        
+        
+        <div class="row">
+
+            <div class="leftcolumn">
+                {{ graph1 }}
+            </div>
+            <div class="rightcolumn">
+                {{ graph2 }}
+            </div>
+        </div>
+        <div class="Dataset">
+        <center>
+            <table class="formatTable">
+            
+            
+              <tr class='tableText'>
+                <th>Name</th>
+                <th>Value</th>
+                <th>Units</th>
+              </tr>
+              <tr class='tableText'>
+                <td>Average Wind Speed</td>
+                <td>{{ speed }}</td>
+                <td>m/s</td>
+              </tr>
+              <tr class='tableText'>
+                <td>Average January Wind Speed</td>
+                <td>{{ january }}</td>
+                <td>m/s</td>
+              </tr>
+              <tr class='tableText'>
+                <td>Average Wind Direction</td>
+                <td>{{ direction }}</td>
+                <td>degrees clockwise</td>
+              </tr>
+              <tr class='tableText'>
+                <td>Average Solar Irradiance</td>
+                <td>{{ irradiance }}</td>
+                <td>kw-hr/m^2/day</td>
+              </tr>
+              <tr class='tableText'>
+                <td>Wind Speed World Ranking</td>
+                <td>{{ speed_ranking }}</td>
+                <td>%</td>
+              </tr>
+              <tr class='tableText'>
+                <td>Solar Irradiance World Ranking</td>
+                <td>{{ solar_ranking }}</td>
+                <td>%</td>
+              </tr>
+              <tr class='tableText'>
+                <td>Minimum Wind Speed</td>
+                <td>{{ min_speed }}</td>
+                <td>m/s</td>
+              </tr>
+              <tr class='tableText'>
+                <td>Maximum Wind Speed</td>
+                <td>{{ max_speed }}</td>
+                <td>m/s</td>
+              </tr>
+              <tr class='tableText'>
+                <td>Minimum Solar Irradiance</td>
+                <td>{{ min_solar }}</td>
+                <td>kw-hr/m^2/day</td>
+              </tr>
+              <tr class='tableText'>
+                <td>Maximum Solar Irradiance</td>
+                <td>{{ max_solar }}</td>
+                <td>kw-hr/m^2/day</td>
+              </tr>
+          
+      </font>  
+            </table>
+        </center>
+        </div>
+        
+
+        </center>
+</body>
+
+</html>

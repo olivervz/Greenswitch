@@ -1,0 +1,37 @@
+@font-face {
+    font-family: "Akzidenz Grotesk Bold";
+    src: url("fonts/AkzidenzGrotesk-Bold.otf");
+}
+
+@font-face {
+    font-family: "Akzidenz Grotesk Medium";
+    src: url("fonts/AkzidenzGrotesk-Medium.otf");
+}
+
+@font-face {
+    font-family: "Akzidenz Grotesk Regular";
+    src: url("fonts/AkzidenzGrotesk-Regular.otf");
+}
+
+h1 {
+    font-family: "Akzidenz Grotesk Bold", sans-serif;
+    font-size: 40pt;
+}
+
+h2 {
+    font-family: "Akzidenz Grotesk Regular";
+    font-size: 30pt;
+}
+
+p {
+    font-family: "Akzidenz Grotesk Regular";
+    font-size: 16pt;
+}
+
+input {
+    font-family: "Akzidenz Grotesk Regular";
+}
+
+.searchbox {
+    background-color: #8CC63F;
+}
