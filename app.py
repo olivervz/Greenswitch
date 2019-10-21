@@ -43,12 +43,10 @@ def parse_data():
 	windDirectionAverage = ""
 	solarIrradianceAverage = ""
 	januaryWindSpeed = ""
-	print("FUCK")
 	if request.method == "POST":
 		if ((request.form.get('searchbar_enabled') != 'on')):
 			try:
 				x = request.form['searchValue']
-				print("DOUBLE FUCK")
 				coords = getCoord.locate(x)
 				la = coords.split(':')[0]
 				lo = coords.split(':')[1]
@@ -81,7 +79,6 @@ def parse_data():
 					speed_ranking=windSpeedWR, solar_ranking=solarIrradianceWR)
 			except:
 				coords = "Invalid Location"
-				print ("TRIPLE FUCK")
 				return render_template('searchBar.html', address='', location='', error='Must Enter an Address',
 					speed='', direction='', irradiance='', january='', graph1='', graph2='', min_speed='', max_speed='', 
 					min_solar='', max_solar='',
