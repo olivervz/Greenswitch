@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>	
+	<head>
+		<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+		<script src="{{url_for('static', filename='greenSwitch.js')}}"></script>
+		<script>
+		var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+		function init() {
+			canvas = document.getElementById("canvas");
+			anim_container = document.getElementById("animation_container");
+			dom_overlay_container = document.getElementById("dom_overlay_container");
+			var comp=AdobeAn.getComposition("CD46870EE64144039F8E3EE52A67756D");
+			var lib=comp.getLibrary();
+			handleComplete({},comp);
+		}
+		function handleComplete(evt,comp) {
+			//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+			var lib=comp.getLibrary();
+			var ss=comp.getSpriteSheet();
+			exportRoot = new lib.greenSwitch();
+			stage = new lib.Stage(canvas);
+			stage.enableMouseOver();	
+			//Registers the "tick" event listener.
+			fnStartAnimation = function() {
+				stage.addChild(exportRoot);
+				createjs.Ticker.setFPS(lib.properties.fps);
+				createjs.Ticker.addEventListener("tick", stage);
+			}	    
+			//Code to support hidpi screens and responsive scaling.
+			AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+			AdobeAn.compositionLoaded(lib.properties.id);
+			fnStartAnimation();
+		}
+		</script>
+
+		<title>GreenSwitch</title>
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/start.css') }}">
+	</head>
+	<body onload="init();" style="margin:0px;">
+		{{ error }}
+		<center>
+		<h1 style="margin-top: 275px;">
+			 <img src="https://imgur.com/d0VtbOM.png">
+		</h1>
+		<form method="POST">
+			<label>
+				<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1100px; height:210px">
+				<canvas id="canvas" width="1100" height="210" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+				<div id="dom_overlay_container" style="pointer-events:auto; overflow:hidden; width:1100px; height:210px; position: absolute; left: 0px; top: 0px; display: block;">
+				</div>
+				</div>
+				<input type="submit" name="d_enabled" value="on" style="visibility:hidden;pointer-events:none;">
+
+			</label>
+		</form>
+    	
+	
+
+			
+	</center>
+</body>
+</html>

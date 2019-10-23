@@ -1,0 +1,16 @@
+.graphFormat1{
+    width:55%;
+    margin-right:2%;
+    float: left;
+}
+
+.graphFormat img{
+   width:100%;
+}
+.graphFormat2 {
+    width:42%;
+    float: left;
+}
+.clearfix{
+    clear:both
+}
